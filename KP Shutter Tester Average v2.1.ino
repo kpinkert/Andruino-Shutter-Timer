@@ -112,9 +112,6 @@ int main(void) {
 
 void ChangeISR() {  //this is the interrupt function, which is called everytime the voltage on pin 2 changes
 
-  // the sensor goes low when it gets lite up and stays low until it goes dark. The sensor floats high and
-  // goes low when the laser lights it up. So here is how this works:
-
   // this is the meat of the software. This ISR is called within a few microseconds (I think) after the sensor
   // toggles states
 
@@ -154,7 +151,7 @@ void DisplayShutterSpeed(unsigned long ulElapsedTimeAvg) {
   display.setCursor(0, 25);
 #endif  // UTRONICS
 
-  if (ulElapsedTimeAvg < 1000000) {  // the shutter speed is greater than a second
+  if (ulElapsedTimeAvg < 1000000) {  // the shutter speed is less than a second
     Serial.print("Shutter Speed: 1/");
     Serial.print(fFractionOfaSecond, 2);
     Serial.println(" second");
@@ -166,7 +163,7 @@ void DisplayShutterSpeed(unsigned long ulElapsedTimeAvg) {
     display.print("  second ");
 #endif  // UTRONICS
 
-  } else {  // the shutter speed is less than a second
+  } else {  // the shutter speed is greater than a second
     fFractionOfaSecond = ulElapsedTimeAvg / 1000000.;
     Serial.print("Shutter Speed: ");
     Serial.print(fFractionOfaSecond, 1);
