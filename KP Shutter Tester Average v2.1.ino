@@ -17,6 +17,10 @@
     completely to keep from getting compile errors. Just comment out the #define UCTRONICS line of code at the top
     of this file.
 
+    On my Laser sensor module, the output is HIGH when the the laser is off. And it is LOW when it senses the laser.
+    The original code was just the opposite. So if your implementation of this code acts weird, just swap the if/else
+    code in the ISR.
+
     Kevin Pinkerton 
     */
 
