@@ -1,5 +1,6 @@
 # Andruino-Shutter-Timer
 A camera shutter timer using Arduino UNO, laser and laser sensor. Optionally with a UCTronics OLED display.
+I purchased mine at Amazon... https://www.amazon.com/UCTRONICS-SSD1306-Self-Luminous-Display-Raspberry/dp/B072Q2X2LL
 
 I want to give credit to the YouTube fellow CAMERADACTYL Cameras who wrote the initial code that I started with.
     
